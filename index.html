@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reynold Onyino Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #f9f9fb;
+      color: #2d2d2d;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      background: #33475b;
+      padding: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #1e3c72;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #1e3c72;
+    }
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+    }
+    .slides {
+      display: none;
+    }
+    .slide-img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+    .card img, .card video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-content {
+      padding: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #1e3c72;
+      color: white;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    form input, form textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    form button {
+      background: #2a5298;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #1e3c72;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Reynold Onyino</h1>
+    <p>Journalism & Mass Communication Student Portfolio</p>
+  </header>
+  <nav>
+    <a href="#designs">Graphic Designs</a>
+    <a href="#videos">Video Projects</a>
+    <a href="#writing">Writing Samples</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="designs">
+    <h2>Graphic Designs</h2>
+    <div class="slideshow-container">
+      <div class="slides"><img class="slide-img" src="Images/g1.jpg" alt="Design 1"></div>
+      <div class="slides"><img class="slide-img" src="Images/g2.jpg" alt="Design 2"></div>
+      <div class="slides"><img class="slide-img" src="Images/g3.jpg" alt="Design 3"></div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </section>
+
+  <section id="videos">
+    <h2>Video Projects</h2>
+    <div class="portfolio-grid">
+      <div class="card">
+        <video controls>
+          <source src="https://youtu.be/S9xH1FnforY" type="video">
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+          <h3>Documentary Short</h3>
+          <p>Edited in Premiere Pro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="writing">
+    <h2>Writing Samples</h2>
+    <div class="portfolio-grid">
+      <div class="card">
+        <div class="card-content">
+          <h3>Investigative Article</h3>
+          <p><a href="writing1.pdf" target="_blank">Read PDF</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Reynold Onyino | Contact: reynoldonyino@gmail.com</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+  </script>
+</body>
+</html>
